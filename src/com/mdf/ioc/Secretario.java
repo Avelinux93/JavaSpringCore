@@ -1,7 +1,16 @@
 package com.mdf.ioc;
 
-public class Secretario implements IEmpleado{
+public class Secretario implements IEmpleado
+{
 	
+	private ICreacionInforme informeNuevo;
+	
+	
+	
+	public void setInformeNuevo(ICreacionInforme _informeNuevo) {
+		this.informeNuevo = _informeNuevo;
+	}
+
 	public String getTareas() 
 	{
 		return "Gestionar la agenda de los jefes";
@@ -10,7 +19,7 @@ public class Secretario implements IEmpleado{
 	@Override
 	public String getInforme() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.informeNuevo.getInforme();
 	}
 
 }
